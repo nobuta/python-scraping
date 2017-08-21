@@ -5,7 +5,7 @@ import numpy as np
 
 caltech_dir = "./image/101_ObjectCategories"
 # ここでカテゴリを変更する
-categories = ["chair","camera","butterfly","elephant","flamingo"]
+categories = ["chair","camera","butterfly","elephant","watch"]
 nb_classes = len(categories)
 
 image_w = 64

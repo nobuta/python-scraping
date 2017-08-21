@@ -6,15 +6,15 @@ import numpy as np
 import os
 
 # ここでカテゴリを変更する
-categories = ["chair","camera","butterfly","elephant","flamingo"]
+categories = ["chair","camera","butterfly","elephant","watch"]
 nb_classes = len(categories)
 
 image_w = 64
 image_h = 64
 
 X_train, X_test, Y_train, Y_test = np.load("./image/5obj.npy")
-X_train = X_train.astype("float")
-X_test = X_test.astype("float")
+X_train = X_train.astype("float") / 256
+X_test = X_test.astype("float") / 256
 print('X_train shape:', X_train.shape)
 
 model = Sequential()
