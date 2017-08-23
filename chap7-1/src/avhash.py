@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np;
 
+
 def average_hash(fname, size=16):
     img = Image.open(fname)
     img = img.convert('L')
@@ -12,6 +13,7 @@ def average_hash(fname, size=16):
     diff = 1 * (pixels > avg)
     return diff
 
+
 def np2hash(n):
     bhash = []
     for nl in ahash.tolist():
@@ -21,6 +23,6 @@ def np2hash(n):
         bhash.append("%04x" % i)
     return "".join(bhash)
 
-ahash = average_hash('o029502791263457565500.jpg')
+ahash = average_hash('image_0001.jpg')
 print(ahash)
 print(np2hash(ahash))

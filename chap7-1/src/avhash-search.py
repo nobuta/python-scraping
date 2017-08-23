@@ -25,11 +25,13 @@ def average_hash(fname, size=16):
         px = np.loadtxt(cache_file, delimiter=",")
     return px
 
+
 def hamming_dist(a,b):
     aa = a.reshape(1, -1)
     bb = b.reshape(1, -1)
     dist = (aa != bb).sum()
     return dist
+
 
 def enum_all_files(path):
     for root, dirs, files, in os.walk(path):
@@ -37,6 +39,7 @@ def enum_all_files(path):
             fname = os.path.join(root, f)
             if re.search(r'\.(jpg|jpeg|png)$', fname):
                 yield fname
+
 
 def find_image(fname, rate):
     src = average_hash(fname)
